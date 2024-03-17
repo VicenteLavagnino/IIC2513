@@ -18,6 +18,9 @@ class WebDriver:
     # Deberas utilizar la librera webdriver para instanciar el driver y los tabs
     # No tiene atributos, no retorna nada
     def initialize_driver(self) -> None:
+        self.driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+        self.driver.get("https://www.wikidex.net/wiki/WikiDex")
+        
         pass
 
     # COMPLETAR
