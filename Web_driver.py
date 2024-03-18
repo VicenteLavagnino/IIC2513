@@ -15,18 +15,24 @@ class WebDriver:
         self.tabs = []
 
     # COMPLETAR
-    # Deberas utilizar la librera webdriver para instanciar el driver y los tabs
+    # Deberas utilizar la libreria webdriver para instanciar el driver y los tabs
     # No tiene atributos, no retorna nada
     def initialize_driver(self) -> None:
+        # Instanciar el driver
         self.driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+        # Instanciar el primer tab
         self.driver.get("https://www.wikidex.net/wiki/WikiDex")
-        
+        sleep(3) # Esperar a que cargue la pagina 
+
         pass
 
     # COMPLETAR
     # Funcion para cargar una pagina
     # Recibe un str, no retorna nada
     def load_page(self, page: str) -> None:
+        # Cargar la pagina
+        self.driver.get(page)
+        sleep(3) # Esperar a que cargue la pagina 
         pass
 
     # COMPLETAR
@@ -89,3 +95,7 @@ class WebDriver:
     # Cierra el driver y resetea el atributo a None
     def quit_driver(self) -> None:
         pass
+
+    # Fuentes: 
+    # https://www.youtube.com/watch?v=Zauls_kTjYM
+    # https://towardsdatascience.com/how-to-use-selenium-to-web-scrape-with-example-80f9b23a843a 
