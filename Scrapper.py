@@ -12,6 +12,7 @@ class Scrapper:
     # Debe buscar el pokemon en la pagina
     # Recibe el nombre del pokemon y no retorna nada
     def find_pokemon(self, nombre: str) -> None:
+
         pass
 
     # COMPLETAR
