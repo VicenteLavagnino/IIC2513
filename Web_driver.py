@@ -116,6 +116,12 @@ class WebDriver:
     # Funcion para cerrar el driver
     # Cierra el driver y resetea el atributo a None
     def quit_driver(self) -> None:
+
+        self.driver.quit()
+        # Resetear variables
+        self.driver = None
+        self.active_tab = 0
+        self.tabs = []
         pass
 
     # Fuentes: 
