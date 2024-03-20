@@ -13,6 +13,10 @@ class Scrapper:
     # Recibe el nombre del pokemon y no retorna nada
     def find_pokemon(self, nombre: str) -> None:
 
+        XPATH_SEARCH = '//*[@id="searchInput"]'
+        XPATH_BUTTON = '//*[@id="searchButton"]'
+
+        
         pass
 
     # COMPLETAR

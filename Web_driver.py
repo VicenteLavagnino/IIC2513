@@ -80,13 +80,19 @@ class WebDriver:
     # Funcion para hacer click en un elemento
     # Recibe el tipo de busqueda y el valor, y hace click en el elemento. No retorna nada
     def click_element(self, by: By, value: str) -> None:
+        
+        sleep(1) # Esperar a que cargue el elemento (opcional
+        self.find_element(by, value).click() # Hacer click en el elemento
         pass
     
     # COMPLETAR
     # Funcion para encontrar un elemento
     # Recibe el tipo de busqueda y el valor, y retorna el elemento
     def find_element(self, by: By, value: str) -> SeleniumWebElement:
-        pass
+
+        SeleniumWebElement.find_element(by, value) # creo que esta malo
+
+        return 
 
     # COMPLETAR
     # Funcion para escribir en un elemento
@@ -110,7 +116,7 @@ class WebDriver:
     # Funcion para extraer url
     # Retorna la url de la pagina actual
     def get_url(self) -> str:
-        pass
+        return self.driver.current_url
     
     # COMPLETAR
     # Funcion para cerrar el driver
