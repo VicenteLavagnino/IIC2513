@@ -110,7 +110,9 @@ class WebDriver:
     # Funcion para extraer atributo title
     # Recibe el tipo de busqueda y el valor, y retorna el atributo title del elemento
     def get_title(self, by: By, value: str) -> str:
-        pass
+
+        sleep(1)
+        return self.find_element(by, value).get_attribute("title")
 
     # COMPLETAR
     # Funcion para extraer url
