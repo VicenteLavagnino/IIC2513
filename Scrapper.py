@@ -15,8 +15,8 @@ class Scrapper:
 
         XPATH_SEARCH = '//*[@id="searchInput"]'
         XPATH_BUTTON = '//*[@id="searchButton"]'
-
-        
+        self.web_driver.driver.find_element(By.XPATH, XPATH_SEARCH).send_keys(nombre)
+        self.web_driver.driver.find_element(By.XPATH, XPATH_BUTTON).click()
         pass
 
     # COMPLETAR
@@ -24,6 +24,23 @@ class Scrapper:
     # Recibe una lista de nombres de pokemones y retorna una lista de listas con la informacion de cada pokemon
     def extract_pokemon_info(self, pokemon_list: list[str]) -> list:
         info_pokemons = []
+
+        for pokemon in pokemon_list:
+
+            info_poke = []
+            
+            self.web_driver.write_in_element(By.XPATH, '//*[@id="searchInput"]', pokemon)
+            self.web_driver.click_element(By.XPATH, '//*[@id="searchButton"]')
+
+            tipo = self.web_driver.get_title(By.XPATH, '/html/body/div/div[1]/div[1]/div[3]/div[4]/div[1]/div[1]/div/div[3]/table/tbody/tr[4]/td/a')
+            categoria = self.web_driver.get_text(By.XPATH, '/html/body/div/div[1]/div[1]/div[3]/div[4]/div[1]/div[1]/div/div[3]/table/tbody/tr[3]/td')
+            peso = self.web_driver.get_text(By.XPATH, '/html/body/div/div[1]/div[1]/div[3]/div[4]/div[1]/div[1]/div/div[3]/table/tbody/tr[7]/td')
+            altura = self.web_driver.get_text(By.XPATH, '/html/body/div/div[1]/div[1]/div[3]/div[4]/div[1]/div[1]/div/div[3]/table/tbody/tr[8]/td')
+
+            info_poke = [pokemon, tipo, categoria, peso, altura]
+            info_pokemons.append(info_poke)
+            pass
+
         return info_pokemons
     
     # COMPLETAR

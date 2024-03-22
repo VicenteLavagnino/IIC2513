@@ -140,3 +140,4 @@ class WebDriver:
     # Fuentes: 
     # https://www.youtube.com/watch?v=Zauls_kTjYM
     # https://towardsdatascience.com/how-to-use-selenium-to-web-scrape-with-example-80f9b23a843a 
+    # https://www.selenium.dev/selenium/docs/api/py/webdriver_remote/selenium.webdriver.remote.webelement.html
