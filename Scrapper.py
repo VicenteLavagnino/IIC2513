@@ -37,7 +37,7 @@ class Scrapper:
             peso = self.web_driver.get_text(By.XPATH, '/html/body/div/div[1]/div[1]/div[3]/div[4]/div[1]/div[1]/div/div[3]/table/tbody/tr[7]/td')
             altura = self.web_driver.get_text(By.XPATH, '/html/body/div/div[1]/div[1]/div[3]/div[4]/div[1]/div[1]/div/div[3]/table/tbody/tr[8]/td')
 
-            info_poke = [pokemon, tipo, categoria, peso, altura]
+            info_poke = [pokemon, tipo, categoria, float(peso[:-2]), float(altura[:-1])]
             info_pokemons.append(info_poke)
             pass
 
@@ -48,6 +48,10 @@ class Scrapper:
     # Recibe una lista de listas con la info de cada pokemon y retorna una lista de listas con la info de cada pokemon ordenada
     def sort_by_weight(self, info: list) -> list:
         info_ordenada = []
+
+        # Ordenar según peso de manera descendente
+        info_ordenada = sorted(info, key=lambda x: x[3], reverse=True)
+
         return info_ordenada
 
     # COMPLETAR
@@ -56,4 +60,13 @@ class Scrapper:
     def write_csv(self, info: list) -> None:
         header = "NOMBRE;TIPOS;CATEGORIA;PESO;ALTURA\n"
         filename = 'pokemons.csv'
+
+        with open(filename, 'w') as file:
+            file.write(header)
+            for pokemon in info:
+                file.write(f"{pokemon[0]};{pokemon[1]};{pokemon[2]};{pokemon[3]};{pokemon[4]}\n")
+                pass
+            pass
+
         print(f"Se ha creado el archivo {filename}\n")
+        pass
