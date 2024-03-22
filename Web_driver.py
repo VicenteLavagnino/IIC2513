@@ -90,21 +90,26 @@ class WebDriver:
     # Recibe el tipo de busqueda y el valor, y retorna el elemento
     def find_element(self, by: By, value: str) -> SeleniumWebElement:
 
-        SeleniumWebElement.find_element(by, value) # creo que esta malo
-
-        return 
+        sleep(1) # Esperar a que cargue el elemento
+        return self.driver.find_element(by, value) # Encontrar el elemento
 
     # COMPLETAR
     # Funcion para escribir en un elemento
     # Recibe el tipo de busqueda, el valor y el texto a escribir, y escribe el texto en el elemento
     def write_in_element(self, by: By, value: str, text: str) -> None:
+
+        sleep(1) # Esperar a que cargue el elemento
+        self.find_element(by, value).clear() # Limpiar el campo
+        self.find_element(by, value).send_keys(text) # Escribir el texto
         pass
 
     # COMPLETAR
     # Funcion para extraer texto
     # Recibe el tipo de busqueda y el valor, y retorna el texto del elemento
     def get_text(self, by: By, value: str) -> str:
-        pass
+
+        sleep(1)
+        return self.driver.find_element(by, value).text
     
     # COMPLETAR
     # Funcion para extraer atributo title
