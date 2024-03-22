@@ -9,23 +9,29 @@
 ### :computer: Cómo ejecutar este código
 
 ```bash
-# Indicar comandos necesarios para ejecutar la tarea
+# Acceder a la carpeta del proyecto
+pip3 main.py
 ```
 
 ### :teacher: Explicación del funcionamiento del código 
 
-El código se divide en 4 archivos princiapales:
-- Packages.py: donde se encuentran todas laas
+El código se divide en 4 archivos principales:
+- Packages.py: donde se encuentran todas la gestión de las dependencias del proyecto, en particular este archivo no fue modificado.
+- Main.py: donde se encuentra la clase Main que se encarga de ejecutar el código principal del proyecto, además en este archivo se instancia la clase Scrapper y se ejecuta el método principal de esta clase junto con la inicialización del webdriver (y posterior cierre).
+- Webdriver.py: donde se encuentra la clase Webdriver que se encarga de la gestión del webdriver de selenium en aspectos generales y puede ser escalable.
+- Scrapper.py: donde se encuentra la clase Scrapper que se encarga de obtener la información de la página web en particular de los pokemones y fue especialmente diseñada para este proyecto.
 
 ## Reflexión :thought_balloon:
 
 ### :scroll: ¿Cómo se usó DevTools para realizar la tarea?
 
-Completar respuesta.
+Para este proyecto se utilizó DevTools para explorar la página web y poder identificar los elementos necesarios para el desarrollo del código, en particular se utilizó para identificar los elementos de la página web que contienen la información solicitada utilizando el inspector de elementos y la consola de la página web junto con los XPath de los elementos.
 
 ### :thinking: ¿Por qué necesaria la exploración previa con Devtool?
 
-El manejo y previa exploración de la herramienta Devtool es fundamental para el desarrollo de esta Tarea ya 
+El manejo y previa exploración de la herramienta Devtool es fundamental para el desarrollo de esta Tarea ya que permite familiarizarse con la estructura de la página web y los elementos que la componen, de esta forma se puede identificar los elementos necesarios para el desarrollo del código y poder obtener la información necesaria de la página web.
+
+Además, la exploración previa con Devtool permite identificar los elementos de la página web que contienen la información solicitada y poder obtener los XPath de estos elementos, lo que facilita el desarrollo del código y la obtención de la información.
 
 ### :adhesive_bandage: ¿Qué elementos en la página web podrían haber facilitado este desarrollo?
 
