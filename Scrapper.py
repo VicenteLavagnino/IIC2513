@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
-from Web_driver import WebDriver 
+from Web_driver import WebDriver
+from selenium.webdriver.common.action_chains import ActionChains 
 
 class Scrapper:
 
@@ -15,8 +16,14 @@ class Scrapper:
 
         XPATH_SEARCH = '//*[@id="searchInput"]'
         XPATH_BUTTON = '//*[@id="searchButton"]'
-        self.web_driver.driver.find_element(By.XPATH, XPATH_SEARCH).send_keys(nombre)
-        self.web_driver.driver.find_element(By.XPATH, XPATH_BUTTON).click()
+        
+        search_element = self.web_driver.driver.find_element(By.XPATH, XPATH_SEARCH)
+        search_element.clear()  # Limpiar el campo por si acaso.
+        search_element.send_keys(nombre)  # Ingresar el nombre del Pokémon.
+        search_element.send_keys(Keys.ENTER)  # Simular la pulsación de Enter
+
+        #element = self.web_driver.driver.find_element(By.XPATH, XPATH_BUTTON)
+        #ActionChains(self.web_driver.driver).move_to_element(element).click(element).perform()
         pass
 
     # COMPLETAR

@@ -38,3 +38,5 @@ Además, la exploración previa con Devtool permite identificar los elementos de
 Una modificación de la página web que podría ser más fácil para el desarrollo del código, sería que toda la información se encuentre en un solo formato, ya sea texto o con el tag de title, de esta forma se pueda recurrir a la información con una sola función del webdriver y sea más fácil de escalar.
 
 Otro tema a mejorar de la página para facilitar la función del Scrapper puede ser que para el html generado para el "tipo" de pokemon, se podría agregar una etiqueta o en alguna sección del código los "tipos" del pokemon separados por , o ; a modo de facilitar la recolección de información.
+
+Por otra parte, los overlays que aparecen en la página al escribir en el buscador de la página web, dificultan la obtención de la información, ya que al hacer click en el overlay se redirige a otra página y no se puede obtener la información necesaria.
