@@ -19,8 +19,7 @@ class Scrapper:
         XPATH_SEARCH = '//*[@id="searchInput"]'
         search_element = self.web_driver.driver.find_element(By.XPATH, XPATH_SEARCH)
         search_element.clear()
-        search_element.send_keys(nombre)
-        search_element.send_keys(Keys.ENTER)  # Correcto envío de la tecla Enter
+        search_element.send_keys(nombre + Keys.ENTER)
 
         #XPATH_BUTTON = '//*[@id="searchButton"]'
         #element = self.web_driver.driver.find_element(By.XPATH, XPATH_BUTTON)
@@ -37,8 +36,7 @@ class Scrapper:
 
             info_poke = []
             
-            self.web_driver.write_in_element(By.XPATH, '//*[@id="searchInput"]', pokemon)
-            self.web_driver.click_element(By.XPATH, '//*[@id="searchButton"]')
+            self.find_pokemon(pokemon)
 
             tipo = self.web_driver.get_title(By.XPATH, '/html/body/div/div[1]/div[1]/div[3]/div[4]/div[1]/div[1]/div/div[3]/table/tbody/tr[4]/td/a')
             categoria = self.web_driver.get_text(By.XPATH, '/html/body/div/div[1]/div[1]/div[3]/div[4]/div[1]/div[1]/div/div[3]/table/tbody/tr[3]/td')
