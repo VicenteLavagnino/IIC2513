@@ -43,7 +43,7 @@ class Scrapper:
             peso = self.web_driver.get_text(By.XPATH, '/html/body/div/div[1]/div[1]/div[3]/div[4]/div[1]/div[1]/div/div[3]/table/tbody/tr[7]/td')
             altura = self.web_driver.get_text(By.XPATH, '/html/body/div/div[1]/div[1]/div[3]/div[4]/div[1]/div[1]/div/div[3]/table/tbody/tr[8]/td')
 
-            #info_poke = [pokemon, tipo, categoria, float(peso[:-2].replace(',', '.').strip()), float(altura[:-1].replace(',', '.').strip())]
+            info_poke = [pokemon, tipo, categoria, float(peso[:-2].replace(',', '.').strip()), float(altura[:-1].replace(',', '.').strip())]
             info_pokemons.append(info_poke)
             pass
 

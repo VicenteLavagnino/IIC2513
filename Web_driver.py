@@ -20,7 +20,7 @@ class WebDriver:
     def initialize_driver(self) -> None:
         # Instanciar el driver
         self.driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
-        sleep(3) # Esperar a que cargue el driver
+        sleep(1) # Esperar a que cargue el driver
         # Instanciar tabs
         self.tabs = [self.driver.current_window_handle]
         pass
@@ -31,7 +31,7 @@ class WebDriver:
     def load_page(self, page: str) -> None:
         # Cargar la pagina
         self.driver.get(page)
-        sleep(3) # Esperar a que cargue la pagina 
+        sleep(1) # Esperar a que cargue la pagina 
         pass
 
     # COMPLETAR
@@ -81,7 +81,7 @@ class WebDriver:
     # Recibe el tipo de busqueda y el valor, y hace click en el elemento. No retorna nada
     def click_element(self, by: By, value: str) -> None:
         
-        sleep(3) # Esperar a que cargue el elemento (opcional
+        sleep(1) # Esperar a que cargue el elemento (opcional
         self.find_element(by, value).click() # Hacer click en el elemento
         pass
     
@@ -90,7 +90,7 @@ class WebDriver:
     # Recibe el tipo de busqueda y el valor, y retorna el elemento
     def find_element(self, by: By, value: str) -> SeleniumWebElement:
 
-        sleep(3) # Esperar a que cargue el elemento
+        sleep(1) # Esperar a que cargue el elemento
         return self.driver.find_element(by, value) # Encontrar el elemento
 
     # COMPLETAR
@@ -98,7 +98,7 @@ class WebDriver:
     # Recibe el tipo de busqueda, el valor y el texto a escribir, y escribe el texto en el elemento
     def write_in_element(self, by: By, value: str, text: str) -> None:
 
-        sleep(3) # Esperar a que cargue el elemento
+        sleep(1) # Esperar a que cargue el elemento
         self.find_element(by, value).clear() # Limpiar el campo
         self.find_element(by, value).send_keys(text) # Escribir el texto
         pass
@@ -108,7 +108,7 @@ class WebDriver:
     # Recibe el tipo de busqueda y el valor, y retorna el texto del elemento
     def get_text(self, by: By, value: str) -> str:
 
-        sleep(3)
+        sleep(1)
         return self.driver.find_element(by, value).text
     
     # COMPLETAR
@@ -116,7 +116,7 @@ class WebDriver:
     # Recibe el tipo de busqueda y el valor, y retorna el atributo title del elemento
     def get_title(self, by: By, value: str) -> str:
 
-        sleep(3)
+        sleep(1)
         return self.find_element(by, value).get_attribute("title")
 
     # COMPLETAR
