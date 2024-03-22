@@ -12,7 +12,7 @@ def execute_scrapping():
     # Instanciar el scrapper
     scrapper = Scrapper(driver)
 
-    poke_list = ['Pikachu', 'Charizard', 'Snorlax', 'Gyarados', 'Lugia', 'Eevee', 'Rowlet', 'Greninja', 'Lucario', 'Crobat', 'Kingambit', 'Salandit Entei']
+    poke_list = ['Pikachu', 'Charizard', 'Snorlax', 'Gyarados', 'Lugia', 'Eevee', 'Rowlet', 'Greninja', 'Lucario', 'Crobat', 'Kingambit', 'Salandit', 'Entei']
 
     # Extraer la información de los pokemones
     info_pokemons = scrapper.extract_pokemon_info(poke_list)
