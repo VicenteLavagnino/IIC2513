@@ -23,11 +23,19 @@ El código se divide en 4 archivos principales:
 - Webdriver.py: donde se encuentra la clase Webdriver que se encarga de la gestión del webdriver de selenium en aspectos generales y puede ser escalable.
 - Scrapper.py: donde se encuentra la clase Scrapper que se encarga de obtener la información de la página web en particular de los pokemones y fue especialmente diseñada para este proyecto.
 
+Sobre el desarrollo de este proyecto, en particular se comenzó por desarrollar la clase WebDriver, la cual a mi impresión es la más importante para el desarrollo de este proyecto, ya que se encarga de la gestión del webdriver de selenium y a su vez es la que utiliza recursos desconocidos para mi previo al desarrollo del curso.
+
+Luego, en paralelo se realizó el desarrollo del Scrapper junto con el archivo Main, donde se trabajó en paralelo en la creación de la clase y su inialización en el archivo Main.
+
+Finalmente se trabajó en el readme y el debugging del código para asegurar su correcto funcionamiento.
+
 ## Reflexión :thought_balloon:
 
 ### :scroll: ¿Cómo se usó DevTools para realizar la tarea?
 
 Para este proyecto se utilizó DevTools para explorar la página web y poder identificar los elementos necesarios para el desarrollo del código, en particular se utilizó para identificar los elementos de la página web que contienen la información solicitada utilizando el inspector de elementos y la consola de la página web junto con los XPath de los elementos.
+
+Además, el uso de selenium y el controlador fueron claves para el desarrollo de este proyecto, ya que en primer lugar la modularización me permitió separar el código segun sus funciones y así darme cuenta de la escalabilidad que se le puede dar al código del driver y el scrapper de manera independiente, siendo mucho más fácil de replicar para otro potencial proyecto futuro, haciendo únicamente las modificacione sustanciales en el scrapper.
 
 ### :thinking: ¿Por qué necesaria la exploración previa con Devtool?
 
