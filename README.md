@@ -9,8 +9,10 @@
 ### :computer: Cómo ejecutar este código
 
 ```bash
+# Si es la primera vez que se ejecuta el código
+python3 Packages.py
 # Acceder a la carpeta del proyecto
-pip3 main.py
+python3 main.py
 ```
 
 ### :teacher: Explicación del funcionamiento del código 
