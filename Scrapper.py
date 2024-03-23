@@ -39,11 +39,20 @@ class Scrapper:
             self.find_pokemon(pokemon)
 
             tipo = self.web_driver.get_title(By.XPATH, '/html/body/div/div[1]/div[1]/div[3]/div[4]/div[1]/div[1]/div/div[3]/table/tbody/tr[4]/td/a')
+            tipo = tipo[5:]
+
+            try:
+                tipo2 = self.web_driver.get_title(By.XPATH, '/html/body/div[1]/div[1]/div[1]/div[3]/div[4]/div[1]/div[1]/div/div[3]/table/tbody/tr[4]/td/a[2]')
+                tipo = tipo + "; " + tipo2[5:]
+            except:
+                pass
+                
+
             categoria = self.web_driver.get_text(By.XPATH, '/html/body/div/div[1]/div[1]/div[3]/div[4]/div[1]/div[1]/div/div[3]/table/tbody/tr[3]/td')
             peso = self.web_driver.get_text(By.XPATH, '/html/body/div/div[1]/div[1]/div[3]/div[4]/div[1]/div[1]/div/div[3]/table/tbody/tr[7]/td')
             altura = self.web_driver.get_text(By.XPATH, '/html/body/div/div[1]/div[1]/div[3]/div[4]/div[1]/div[1]/div/div[3]/table/tbody/tr[8]/td')
 
-            info_poke = [pokemon, tipo[5:], categoria, float(peso[:-2].replace(',', '.').strip()), float(altura[:-1].replace(',', '.').strip())]
+            info_poke = [pokemon, tipo, categoria, float(peso[:-2].replace(',', '.').strip()), float(altura[:-1].replace(',', '.').strip())]
             info_pokemons.append(info_poke)
             pass
 
@@ -56,7 +65,7 @@ class Scrapper:
         info_ordenada = []
 
         # Ordenar según peso de manera descendente
-        info_ordenada = sorted(info, key=lambda x: x[3], reverse=True)
+        info_ordenada = sorted(info, key=lambda x: x[-2], reverse=True)
 
         return info_ordenada
 

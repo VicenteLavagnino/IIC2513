@@ -14,6 +14,9 @@ def execute_scrapping():
 
     poke_list = ['Pikachu', 'Charizard', 'Snorlax', 'Gyarados', 'Lugia', 'Eevee', 'Rowlet', 'Greninja', 'Lucario', 'Crobat', 'Kingambit', 'Salandit', 'Entei']
 
+    # testeo
+    #poke_list = ['Gyarados', 'Lugia', 'Eevee']
+
     # Extraer la información de los pokemones
     info_pokemons = scrapper.extract_pokemon_info(poke_list)
     sorted_info = scrapper.sort_by_weight(info_pokemons)
