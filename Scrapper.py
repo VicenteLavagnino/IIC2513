@@ -43,7 +43,7 @@ class Scrapper:
 
             try:
                 tipo2 = self.web_driver.get_title(By.XPATH, '/html/body/div[1]/div[1]/div[1]/div[3]/div[4]/div[1]/div[1]/div/div[3]/table/tbody/tr[4]/td/a[2]')
-                tipo = tipo + "; " + tipo2[5:]
+                tipo = tipo + ";" + tipo2[5:]
             except:
                 pass
                 
