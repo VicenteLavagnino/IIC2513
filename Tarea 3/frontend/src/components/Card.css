@@ -1,0 +1,89 @@
+.text-container {
+    position: relative;
+    display: inline-block;
+    width: 390px;
+    min-height: 6em;
+    max-height: 500px;
+    border-radius: 10px;
+    border: 4px solid #000;
+    background-color: beige;
+    overflow-x: scroll;
+    overflow-y: scroll;
+}
+
+.label-box {
+    margin: 10px;
+    position: relative;
+}
+
+.title {
+    width: 100%;
+    background-color: coral;
+    padding: 10px;
+    max-height: 87px;
+    overflow-y: scroll;
+    min-height: 40px;
+}
+
+.paragraph {
+    margin: 20px;
+}
+
+.pencil-button {
+    margin: 5px;
+    height: 35px;
+    position: absolute;
+}
+
+.trash-button {
+    margin: 5px;
+    height: 35px;
+    position: absolute;
+    bottom: 10px;
+}
+
+.pencil-button:hover {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    animation: shake 0.5s ease-in-out;
+    opacity: 0.8;
+}
+
+.trash-button:hover {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    animation: shake 0.5s ease-in-out;
+    opacity: 0.8;
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+  }
+
+.date {
+    margin: 0px;
+    padding-left: 3px;
+    padding-right: 3px;
+    font-size: 12px;;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border: 1px solid black;
+    border-radius: 7px;
+}
+
+.edit_title {
+    margin-left: 5px;
+    position: absolute;
+    top: 5px;
+}
+
+.edit_paragraph {
+    margin-left: 5px;
+    width: 66%;
+    height: 200px;
+}

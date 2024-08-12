@@ -1,0 +1,5 @@
+node_modules/
+*.lock
+.env
+*Zone.Identifier
+.DS_Store

@@ -1,0 +1,26 @@
+{
+  "name": "T3-Back-24-1",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "commonjs",
+  "license": "MIT",
+  "dependencies": {
+    "@koa/cors": "^5.0.0",
+    "dotenv": "^16.4.5",
+    "koa": "^2.15.3",
+    "koa-body": "^6.0.1",
+    "koa-logger": "^3.2.1",
+    "koa-router": "^12.0.1",
+    "pg": "^8.11.5",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.37.3"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0",
+    "sequelize-cli": "^6.6.2"
+  }
+}

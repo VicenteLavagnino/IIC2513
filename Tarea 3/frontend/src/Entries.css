@@ -1,0 +1,64 @@
+#entries-background {
+    position: absolute;
+    background: linear-gradient(to left, #ff9966, #ff5e62);
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    padding: 10px;
+    height: 90vh;
+    background-color: white;
+    width: 470px;
+    position: absolute;
+    overflow-y: scroll;
+    top: 50%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    border-radius: 15px;
+}
+
+.new-entry {
+    padding: 20px;
+    height: 400px;
+    background-color: rgb(254, 212, 212);
+    width: 400px;
+    position: absolute;
+    top: 50%;
+    left: 82%;
+    transform: translate(-50%, -50%);
+}
+
+.new-entry::before {
+    content: ''; /* Crea un elemento pseudo ::before */
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 50px 50px 0; /* Define los lados del triángulo */
+    border-color: transparent transparent #f0f0f0 transparent; /* Define el color del triángulo */
+    transform-origin: bottom left;
+    transform: rotate(360deg); /* Rota el triángulo para que esté en la esquina inferior izquierda */
+  }
+
+.write-area {
+    margin: 20px;
+    height: 220px;
+    width: 300px;
+}
+
+.return-button {
+    height: 160px;
+    margin: 20px;
+}
+
+.return-label {
+    background-color: white;
+    width: 200px;
+    border-radius: 8px;
+    position: absolute;
+    top: 35%;
+    left: 7%;
+}

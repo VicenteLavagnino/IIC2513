@@ -1,0 +1,15 @@
+body {
+  background-color: #000;
+  color: #fff;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+.image-container img {
+  max-width: 20%; 
+  height: auto;
+  display: block; 
+}
